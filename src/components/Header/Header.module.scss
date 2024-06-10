@@ -1,0 +1,34 @@
+@import '../../scss/variables';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  max-width: 1240px;
+  width: 100%;
+
+  .logo {
+    width: 91px;
+    height: 20px;
+  }
+
+  .button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1365px) {
+  .header {
+    max-width: 728px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    max-width: 280px;
+  }
+}

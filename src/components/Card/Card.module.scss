@@ -1,0 +1,247 @@
+@import '../../scss/variables';
+
+@keyframes line {
+  0% {
+    background-color: $accent_gold;
+  }
+  5% {
+    background-color: rgb(172, 160, 108);
+  }
+  95% {
+    background-color: $accent_gold;
+  }
+}
+
+@keyframes lineRed {
+  0% {
+    background-color: $accent_red;
+  }
+  5% {
+    background-color: rgb(158, 52, 52);
+  }
+  95% {
+    background-color: $accent_red;
+  }
+}
+
+@keyframes lineRevers {
+  0% {
+    background-color: $accent_gold;
+  }
+  5% {
+    background-color: rgb(172, 160, 108);
+  }
+  95% {
+    background-color: $accent_gold;
+  }
+}
+
+@keyframes lineRedRevers {
+  0% {
+    background-color: $accent_red;
+  }
+  5% {
+    background-color: rgb(158, 52, 52);
+  }
+  95% {
+    background-color: $accent_red;
+  }
+}
+
+.card {
+  width: 392px;
+  height: 260px;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    img {
+      transform: scale(1.05);
+      transition: all 0.2s linear;
+    }
+
+    .info {
+      &::after {
+        animation-name: line;
+        animation-duration: 1s;
+      }
+      .name {
+        transform: translateY(200%);
+        opacity: 0;
+        transition: all 0.2s linear;
+      }
+
+      .location {
+        transform: translateX(0%);
+        opacity: 1;
+        transition: all 0.2s linear;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: all 0.2s linear;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    height: 82px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $primary_black;
+    transition: background-color 0.1s linear;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 42px;
+      position: absolute;
+      left: 0;
+      top: 20px;
+      background-color: $accent_gold;
+      animation-name: lineRevers;
+      animation-duration: 1s;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      height: 42px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      h3 {
+        font-family: 'Cormorant SC', serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 1rem;
+        text-transform: uppercase;
+      }
+
+      h4 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 0.8rem;
+        color: $accent_gold;
+      }
+    }
+
+    .name {
+      position: absolute;
+      transform: translateY(0%);
+      opacity: 1;
+      transition: all 0.2s linear;
+    }
+
+    .location {
+      position: absolute;
+      transform: translateX(-100%);
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+  }
+}
+
+:root[data-theme='light'] {
+  .card {
+    &:hover {
+      .info {
+        &::after {
+          animation-name: lineRed;
+          animation-duration: 1s;
+        }
+      }
+    }
+    .info {
+      background-color: $primary_white;
+      color: $primary_black;
+      transition: background-color 0.1s linear;
+
+      &::after {
+        background-color: $accent_red;
+        animation-name: lineRedRevers;
+        animation-duration: 1s;
+      }
+
+      div {
+        h4 {
+          color: $accent_red;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1365px) {
+  .card {
+    width: 352px;
+    height: 220px;
+
+    .info {
+      height: 66px;
+
+      &::after {
+        width: 24px;
+        height: 66px;
+        top: 0;
+        left: 100%;
+        background: url('../../assets/Card/arrow.svg') no-repeat center;
+        background-color: $accent_gold;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    width: 280px;
+    height: 185px;
+
+    .info {
+      width: 236px;
+      height: 45px;
+      text-align: left;
+
+      &::after {
+        width: 24px;
+        height: 45px;
+      }
+
+      .name {
+        justify-content: center;
+        gap: 6px;
+        h3 {
+          font-size: 0.9rem;
+        }
+
+        h4 {
+          font-size: 0.5rem;
+        }
+      }
+
+      .location {
+        justify-content: center;
+        gap: 8px;
+        h3 {
+          font-size: 0.9rem;
+        }
+
+        h4 {
+          font-size: 0.5rem;
+        }
+      }
+    }
+  }
+}

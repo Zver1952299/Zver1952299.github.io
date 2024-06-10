@@ -1,0 +1,127 @@
+@import '../../scss/variables';
+
+.container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  margin: 0 0 100px;
+  color: $primary_light_gray;
+
+  .selected {
+    background-color: rgba($color: $primary_black, $alpha: 0.05);
+    transition: background-color 0.1s linear;
+  }
+
+  a {
+    cursor: pointer;
+  }
+
+  .page {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    margin: 0 2px;
+    padding-top: 2px;
+    transition: background-color 0.1s linear;
+
+    &:hover {
+      border-bottom: 1px solid $secondary_black;
+    }
+
+    & a {
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+  }
+
+  .next,
+  .prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    transition: background-color 0.1s linear;
+
+    &:hover {
+      background-color: $secondary_black;
+    }
+  }
+
+  .disabled {
+    &:hover {
+      background-color: red;
+    }
+  }
+
+  .next {
+    margin-left: 25px;
+  }
+
+  .prev {
+    margin-right: 25px;
+  }
+
+  .break {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .selected {
+    background-color: $secondary_black;
+
+    a {
+      font-weight: 500;
+      cursor: default;
+    }
+  }
+
+  .disabledArrow {
+    a {
+      cursor: default;
+    }
+    filter: brightness(50%);
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+:root[data-theme='light'] {
+  .container {
+    color: $primary_dark_gray;
+    .page {
+      &:hover {
+        border-bottom: 1px solid rgba($color: $primary_black, $alpha: 0.05);
+      }
+    }
+    .next,
+    .prev {
+      &:hover {
+        background-color: rgba($color: $primary_black, $alpha: 0.05);
+      }
+    }
+    .selected {
+      background-color: rgba($color: $primary_black, $alpha: 0.05);
+      transition: background-color 0.1s linear;
+    }
+    .disabledArrow {
+      opacity: 0.2;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    margin: 0 0 80px;
+  }
+}

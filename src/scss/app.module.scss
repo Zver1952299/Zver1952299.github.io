@@ -1,0 +1,29 @@
+@import './libs/normalize';
+@import './variables';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  max-width: 100%;
+  background-color: transparent;
+  text-align: center;
+}
+
+:root[data-theme='dark'] {
+  body {
+    background-color: $primary_black;
+    color: $primary_white;
+    transition: background-color 0.1s linear;
+  }
+}
+
+:root[data-theme='light'] {
+  body {
+    background-color: $primary_white;
+    color: $primary_black;
+    transition: background-color 0.1s linear;
+  }
+}

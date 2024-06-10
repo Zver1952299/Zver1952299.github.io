@@ -1,0 +1,27 @@
+@import '../../scss/variables';
+
+.sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background-color: $secondary_black;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s linear;
+
+  &:hover {
+    background-color: rgba($color: #cdcdcd, $alpha: 0.05);
+  }
+}
+
+:root[data-theme='light'] {
+  .sort {
+    background-color: $secondary_white;
+
+    &:hover {
+      background-color: rgba($color: #121212, $alpha: 0.05);
+    }
+  }
+}

@@ -1,0 +1,177 @@
+@import '../../scss/variables';
+
+.react-select {
+  &__control {
+    max-width: 320px !important;
+    width: 100% !important;
+    min-height: 36px !important;
+    height: 100% !important;
+    background-color: $secondary_black !important;
+    border: none !important;
+
+    .react-select__indicator {
+      transform: rotate(360deg);
+      transition: transform 0.2s linear;
+    }
+
+    &--menu-is-open {
+      .react-select__indicator {
+        transform: rotate(180deg);
+        transition: transform 0.2s linear;
+      }
+    }
+
+    &--is-focused {
+      border: 1px solid $primary_light_gray !important;
+      box-shadow: none !important;
+    }
+  }
+
+  &__placeholder {
+    font-family: 'Inter', serif !important;
+    font-weight: 300 !important;
+    font-size: 0.8rem !important;
+    color: $primary_dark_gray !important;
+    text-align: left !important;
+    padding: 0 16px !important;
+  }
+
+  &__single-value {
+    font-family: 'Inter', serif !important;
+    font-weight: 300 !important;
+    font-size: 0.8rem !important;
+    color: $primary_light_gray !important;
+    text-align: left;
+    padding: 0 16px !important;
+  }
+
+  &__indicators {
+    margin-right: 16px !important;
+  }
+
+  &__indicator-separator {
+    display: none !important;
+  }
+
+  &__menu {
+    background-color: $secondary_black !important;
+
+    &-list {
+      padding: 10px 0 !important;
+    }
+
+    &-list::-webkit-scrollbar {
+      width: 4px;
+      height: 0px;
+    }
+
+    &-list::-webkit-scrollbar-track {
+      background: $secondary_black;
+    }
+
+    &-list::-webkit-scrollbar-thumb {
+      background: $primary_white;
+    }
+
+    &-list::-webkit-scrollbar-thumb:hover {
+      background: $primary_white;
+    }
+
+    &-notice {
+      height: 36px !important;
+      color: $secondary_gray !important;
+      font-family: 'Inter', serif !important;
+      font-weight: 300 !important;
+      font-size: 0.8rem !important;
+      padding: 0 0 10px !important;
+      margin-left: 16px !important;
+      margin-right: 40px !important;
+      text-align: left !important;
+      line-height: 1.4 !important;
+    }
+  }
+
+  &__option {
+    height: 36px !important;
+    color: $primary_light_gray !important;
+    font-family: 'Inter', serif !important;
+    font-weight: 300 !important;
+    font-size: 0.8rem !important;
+    padding: 14px 0 !important;
+    text-align: left !important;
+    padding-left: 16px !important;
+
+    &--is-selected {
+      background-color: $primary_dark_gray !important;
+    }
+
+    &--is-focused {
+      background-color: $primary_dark_gray !important;
+    }
+  }
+
+  &__input-container {
+    height: 36px !important;
+    color: $primary_light_gray !important;
+    font-family: 'Inter', serif !important;
+    font-weight: 300 !important;
+    font-size: 0.8rem !important;
+    padding-bottom: 1px !important;
+    text-align: left !important;
+    padding-left: 16px !important;
+  }
+}
+
+:root[data-theme='light'] {
+  .react-select {
+    &__control {
+      background-color: $primary_white !important;
+      border: 1px solid $primary-light-gray !important;
+
+      &--is-focused {
+        border: 1px solid $primary_dark_gray !important;
+        box-shadow: none !important;
+      }
+    }
+
+    &__placeholder {
+      color: $secondary_gray !important;
+    }
+
+    &__single-value {
+      color: $primary_dark_gray !important;
+    }
+
+    &__menu {
+      background-color: $primary_white !important;
+
+      &-list::-webkit-scrollbar-track {
+        background: $primary_white;
+      }
+
+      &-list::-webkit-scrollbar-thumb {
+        background: $secondary_gray;
+      }
+
+      &-list::-webkit-scrollbar-thumb:hover {
+        background: $secondary_gray;
+      }
+    }
+
+    &__option {
+      color: $primary_dark_gray !important;
+
+      &--is-selected {
+        background-color: $primary_light_gray !important;
+      }
+
+      &--is-focused {
+        background-color: $primary_light_gray !important;
+      }
+    }
+
+    &__input-container {
+      color: $primary_dark_gray !important;
+    }
+  }
+}

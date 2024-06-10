@@ -1,0 +1,47 @@
+@import '../../scss/variables';
+
+.input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  input {
+    width: 67px;
+    height: 36px;
+    background-color: $secondary-black;
+    color: $primary-light-gray;
+    border: none;
+    border-radius: 4px;
+    padding: 0 16px;
+    transition: background-color 0.1s linear;
+
+    &::placeholder {
+      color: $primary-dark-gray;
+    }
+
+    &:focus {
+      border: 1px solid $primary-light-gray;
+    }
+  }
+
+  span {
+    color: $primary-dark-gray;
+  }
+}
+
+:root[data-theme='light'] {
+  .input {
+    input {
+      background-color: $primary-white;
+      color: $primary-dark-gray;
+      border: 1px solid $primary-light-gray;
+      transition: background-color 0.1s linear;
+      &::placeholder {
+        color: $secondary-gray;
+      }
+      &:focus {
+        border: 1px solid $primary-dark-gray;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.icon {
+  background-color: transparent;
+  border: none;
+}
+
+@media (max-width: 767px) {
+  .icon {
+    img {
+      width: 13px;
+    }
+  }
+}
