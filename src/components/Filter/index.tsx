@@ -58,43 +58,53 @@ function Filter({ filterMenuRef }: FilterMenuRef) {
       className={`${isOpen ? `${styles.wrapper} ${styles.wrapperOpen}` : `${styles.wrapper}`} `}
       ref={filterMenuRef}
     >
-      <button
-        type="button"
-        className={styles.closeBtn}
-        onClick={() => dispatch(setIsOpen(false))}
-      >
-        <img
-          src={theme === 'dark' ? closeIconDark : closeIconLight}
-          alt="closeIcon"
-        />
-      </button>
+      <div className={styles.inner}>
+        <div>
+          <button
+            type="button"
+            className={styles.closeBtn}
+            onClick={() => dispatch(setIsOpen(false))}
+          >
+            <img
+              src={theme === 'dark' ? closeIconDark : closeIconLight}
+              alt="closeIcon"
+            />
+          </button>
 
-      <div className={styles.wrapperAccordion}>
-        {accordionTitles.map((item) => (
-          <AccordionUsage
-            key={item}
-            title={item}
-            value={item === 'Artist' ? dataAuthor : dataLocation}
-            onChangeValue={item === 'Artist' ? setDataAuthor : setDataLocation}
-            valueFrom={valueFrom}
-            valueTo={valueTo}
-            onChangeInputFromValue={setValueFrom}
-            onChangeInputToValue={setValueTo}
-          />
-        ))}
-      </div>
+          <div className={styles.wrapperAccordion}>
+            {accordionTitles.map((item) => (
+              <AccordionUsage
+                key={item}
+                title={item}
+                value={item === 'Artist' ? dataAuthor : dataLocation}
+                onChangeValue={
+                  item === 'Artist' ? setDataAuthor : setDataLocation
+                }
+                valueFrom={valueFrom}
+                valueTo={valueTo}
+                onChangeInputFromValue={setValueFrom}
+                onChangeInputToValue={setValueTo}
+              />
+            ))}
+          </div>
+        </div>
 
-      <div className={styles.bottomBlock}>
-        <button type="button" className={styles.showBtn} onClick={handleFilter}>
-          Show the results
-        </button>
-        <button
-          type="button"
-          className={styles.clearBtn}
-          onClick={handleClearFilter}
-        >
-          Clear
-        </button>
+        <div className={styles.bottomBlock}>
+          <button
+            type="button"
+            className={styles.showBtn}
+            onClick={handleFilter}
+          >
+            Show the results
+          </button>
+          <button
+            type="button"
+            className={styles.clearBtn}
+            onClick={handleClearFilter}
+          >
+            Clear
+          </button>
+        </div>
       </div>
     </div>
   );

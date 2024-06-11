@@ -1,18 +1,25 @@
 @import '../../scss/variables';
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   padding: 60px 0 193px;
   position: fixed;
   width: 492px;
-  height: 100vh;
+  min-height: 720px;
+  height: 100%;
   top: 0;
   right: 0;
   background-color: $primary_black;
   transform: translateX(100%);
   transition: transform 0.5s ease-in;
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 650px;
+    min-height: 480px;
+    height: 100%;
+  }
 
   .wrapperAccordion {
     display: flex;
@@ -25,6 +32,7 @@
   }
 
   .closeBtn {
+    display: block;
     width: 20px;
     margin-left: auto;
     margin-right: 100px;
@@ -56,7 +64,7 @@
     justify-content: space-between;
     width: 320px;
     margin-left: 40px;
-    margin-top: 380px;
+    // margin-top: 380px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -147,6 +155,10 @@
   .wrapper {
     padding-top: 24px;
     width: 280px;
+
+    .inner {
+      max-height: 480px;
+    }
 
     .closeBtn {
       margin-right: 20px;
