@@ -72,8 +72,8 @@
     text-transform: uppercase;
 
     .showBtn {
-      text-decoration: underline $primary_dark_gray;
-      color: $primary_dark_gray !important;
+      text-decoration: underline $primary_light_gray;
+      color: $primary_light_gray !important;
       background-color: inherit;
       border: none;
       font-size: 0.8rem;
@@ -82,11 +82,13 @@
       cursor: pointer;
 
       &:hover {
-        color: $primary_black !important;
+        color: $primary_white !important;
+        text-decoration: underline $primary_white;
       }
 
       &:disabled {
-        color: $secondary-gray !important;
+        color: $primary_dark_gray !important;
+        text-decoration: underline $primary_dark_gray;
       }
     }
 
@@ -101,7 +103,8 @@
       cursor: pointer;
 
       &:hover {
-        color: $primary_dark_gray !important;
+        color: $primary_light_gray !important;
+        text-decoration: underline $primary_light_gray;
       }
     }
   }
@@ -115,18 +118,25 @@
   .wrapper {
     background-color: $secondary_white;
 
-    & > div > div > div {
-      color: $primary_black;
+    & > div > div > div > div {
+      color: $primary_black !important ;
     }
 
     .bottomBlock {
       .showBtn {
-        color: $primary_dark_gray;
-        text-decoration: underline $primary_dark_gray;
+        color: $primary_dark_gray !important;
+        text-decoration: underline $primary_dark_gray !important;
+
+        &:hover {
+          color: $primary_black !important;
+        }
       }
       .clearBtn {
-        color: $secondary_gray;
-        text-decoration: underline $secondary_gray;
+        color: $secondary_gray !important;
+        text-decoration: underline $secondary_gray !important;
+        &:hover {
+          color: $primary_black !important;
+        }
       }
     }
   }
